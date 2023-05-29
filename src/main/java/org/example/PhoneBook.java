@@ -45,6 +45,10 @@ public class PhoneBook {
     }
 
     public boolean printAll () {
+        if (book.size() > 0) {
+            System.out.println(book.toString());
+            return true;
+        }
 
         return false;
     }
