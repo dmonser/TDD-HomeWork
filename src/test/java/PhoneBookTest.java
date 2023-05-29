@@ -27,7 +27,7 @@ public class PhoneBookTest {
                 Arguments.of("Test Name2", 1560, 2),
                 Arguments.of("Test Name3", 2080, 3),
                 Arguments.of("Test Name3", 2014, 3),
-                Arguments.of("Test Name5", 1327, 4)
+                Arguments.of("Test Name4", 1327, 4)
         );
     }
 }

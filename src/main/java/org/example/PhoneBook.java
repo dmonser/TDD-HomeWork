@@ -1,8 +1,11 @@
 package org.example;
 
-public class PhoneBook {
+import java.util.HashMap;
+import java.util.Map;
 
+public class PhoneBook {
     private static PhoneBook instance = null;
+    private final HashMap<String, Integer> book = new HashMap<>();
 
     private PhoneBook () {
 
@@ -16,6 +19,8 @@ public class PhoneBook {
     }
 
     public int add (String name, int number) {
-        return 0;
+        book.put(name, number);
+
+        return book.size();
     }
 }
