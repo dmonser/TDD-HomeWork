@@ -25,14 +25,21 @@ public class PhoneBookTest {
     @Test
     public void testFindByNumber () {
         PhoneBook phoneBook = PhoneBook.getInstance();
-        phoneBook.add("Test Name1", 1986);
-        phoneBook.add("Test Name2", 1560);
-        phoneBook.add("Test Name3", 2080);
-        phoneBook.add("Test Name4", 1327);
+        bookFill(phoneBook);
 
         String result = phoneBook.findByNumber(2080);
 
         Assertions.assertEquals("Test Name3", result);
+    }
+
+    @Test
+    public void testFindByName () {
+        PhoneBook phoneBook = PhoneBook.getInstance();
+        bookFill(phoneBook);
+
+        int result = phoneBook.findByName("Test Name4");
+
+        Assertions.assertEquals(1327, result);
     }
 
     public static Stream<Arguments> addSource() {
@@ -43,5 +50,12 @@ public class PhoneBookTest {
                 Arguments.of("Test Name3", 2014, 3),
                 Arguments.of("Test Name4", 1327, 4)
         );
+    }
+
+    public void bookFill (PhoneBook book) {
+        book.add("Test Name1", 1986);
+        book.add("Test Name2", 1560);
+        book.add("Test Name3", 2080);
+        book.add("Test Name4", 1327);
     }
 }
