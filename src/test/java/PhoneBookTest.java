@@ -43,6 +43,16 @@ public class PhoneBookTest {
         Assertions.assertEquals(1327, result);
     }
 
+    @Test
+    public void testPrintAll () {
+        System.out.println("Start printAll test");
+        bookFill(phoneBook);
+
+        boolean result = phoneBook.printAll();
+
+        Assertions.assertTrue(result);
+    }
+
     public static Stream<Arguments> addSource() {
         return Stream.of(
                 Arguments.of("Test Name5", 1811, 5),

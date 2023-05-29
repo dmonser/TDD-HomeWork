@@ -43,4 +43,9 @@ public class PhoneBook {
 
         return 0;
     }
+
+    public boolean printAll () {
+
+        return false;
+    }
 }
