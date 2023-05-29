@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class PhoneBook {
     private static PhoneBook instance = null;
-    private final HashMap<String, Integer> book = new HashMap<>();
+    private final Map<String, Integer> book = new HashMap<>();
 
     private PhoneBook () {
 
@@ -25,6 +25,14 @@ public class PhoneBook {
     }
 
     public String findByNumber (int number) {
+        if (book.size() > 0) {
+            for (String key : book.keySet()) {
+                if (book.get(key) == number) {
+                    return key;
+                }
+            }
+        }
+
         return null;
     }
 }
