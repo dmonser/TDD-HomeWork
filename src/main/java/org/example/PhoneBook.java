@@ -37,6 +37,10 @@ public class PhoneBook {
     }
 
     public int findByName (String name) {
+        if (book.containsKey(name)) {
+            return book.get(name);
+        }
+
         return 0;
     }
 }

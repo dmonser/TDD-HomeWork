@@ -10,12 +10,13 @@ import java.util.stream.Stream;
 
 public class PhoneBookTest {
     Random random = new Random();
+    PhoneBook phoneBook = PhoneBook.getInstance();
 
     @ParameterizedTest
     @MethodSource("addSource")
     public void testAdd (String name, int number, int expectedStatus) {
         System.out.println("Start add test");
-        PhoneBook phoneBook = PhoneBook.getInstance();
+        bookFill(phoneBook);
 
         int result = phoneBook.add(name, number);
 
@@ -24,7 +25,7 @@ public class PhoneBookTest {
 
     @Test
     public void testFindByNumber () {
-        PhoneBook phoneBook = PhoneBook.getInstance();
+        System.out.println("Start findByNumber test");
         bookFill(phoneBook);
 
         String result = phoneBook.findByNumber(2080);
@@ -34,7 +35,7 @@ public class PhoneBookTest {
 
     @Test
     public void testFindByName () {
-        PhoneBook phoneBook = PhoneBook.getInstance();
+        System.out.println("Start findByName test");
         bookFill(phoneBook);
 
         int result = phoneBook.findByName("Test Name4");
@@ -44,11 +45,9 @@ public class PhoneBookTest {
 
     public static Stream<Arguments> addSource() {
         return Stream.of(
-                Arguments.of("Test Name1", 1986, 1),
-                Arguments.of("Test Name2", 1560, 2),
-                Arguments.of("Test Name3", 2080, 3),
-                Arguments.of("Test Name3", 2014, 3),
-                Arguments.of("Test Name4", 1327, 4)
+                Arguments.of("Test Name5", 1811, 5),
+                Arguments.of("Test Name5", 2023, 5),
+                Arguments.of("Test Name6", 1960, 6)
         );
     }
 
